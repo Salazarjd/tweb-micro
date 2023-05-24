@@ -6,7 +6,18 @@ services:
     build:
       context: .
     ports:
-      - 4002:8081
+      - "4002:4002"
+      - "4003:4002"
+    networks:
+      - proyectos-app
+
+  balanceador-carga:
+    container_name: balanceador-carga
+    image: balanceador-carga:v1
+    build:
+      context: ./balanceador
+    ports:
+      - "4004:80"
     networks:
       - proyectos-app
 
