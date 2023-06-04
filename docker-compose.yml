@@ -8,7 +8,7 @@ services:
     ports:
       - "4002"
     environment:
-      MONGO_URI=${MONGO_URI}
+      MONGO_URI=mongodb+srv://devjs:TR4vTNh35d3Jdb@cluster0.inovega.mongodb.net/
       PORT=4002
     networks:
       - proyectos-app
